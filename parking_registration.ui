@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>dialog</class>
+ <widget class="QDialog" name="dialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>267</width>
+    <width>268</width>
     <height>235</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>CNP동양 주차 등록</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -34,7 +34,7 @@
     <string>CNP 동양 주차 등록 (2시간 무료)</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="car_num_input">
+  <widget class="QLineEdit" name="car_num_input_box">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -44,7 +44,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>0689</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -104,7 +104,7 @@
     <string>차량 번호</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="pw_input">
+  <widget class="QLineEdit" name="pw_input_box">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -117,7 +117,7 @@
     <string>safe1031!!</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="id_input">
+  <widget class="QLineEdit" name="id_input_box">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -133,7 +133,7 @@
   <widget class="QPushButton" name="reg_btn">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>50</x>
      <y>190</y>
      <width>75</width>
      <height>23</height>
@@ -141,6 +141,19 @@
    </property>
    <property name="text">
     <string>등 록</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancel_btn">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>190</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>취 소</string>
    </property>
   </widget>
  </widget>

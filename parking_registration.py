@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Oct 11 18:22:31 2022
-
 @author: hwlee
 """
 
@@ -27,15 +26,15 @@ class WindowClass(QMainWindow, UI_class): # 화면 띄우는데 사용되는 cla
         self.setupUi(self)
         
         self.reg_btn.clicked.connect(self.crawling_fn) # 버튼 누르면 실행
-        self.pw_input.setEchoMode(QLineEdit.Password) # password 안보이게 설정
+        self.pw_input_box.setEchoMode(QLineEdit.Password) # password 안보이게 설정
         
 #%% AUTOMATIC EXECUTION
 
     def crawling_fn(self):
         
-        id_input = self.id_input.text()
-        pw_input = self.pw_input.text()
-        car_num_input = self.car_num_input.text()
+        # id_input = self.id_input.text()
+        # pw_input = self.pw_input.text()
+        # car_num_input = self.car_num_input.text()
         
         # 현재 크롬 버전에 맞게 ChromeDriver 자동 설치
         driver = webdriver.Chrome(service=Service(ChromeDriverManager()\
@@ -45,14 +44,14 @@ class WindowClass(QMainWindow, UI_class): # 화면 띄우는데 사용되는 cla
         driver.get('http://ajhkic.asuscomm.com/discount/carSearch.cs')
         driver.implicitly_wait(15) # 페이지 다 뜰 때 까지 기다림
         
-        driver.find_element(By.ID, 'name').send_keys(d_input) # ID
-        driver.find_element(By.ID, 'pwd').send_keys(pw_input) # PW
+        driver.find_element(By.ID, 'name').send_keys(self.id_input_box.text()) # ID
+        driver.find_element(By.ID, 'pwd').send_keys(self.pw_input_box.text()) # PW
         driver.find_element(By.XPATH, '/html/body/form/table[1]\
                             /tbody/tr[3]/td[2]/input').click() # 로그인 버튼
         
         # 차량 조회 페이지
         # 차량번호
-        driver.find_element(By.ID, 'carNumber').send_keys(car_num_input)
+        driver.find_element(By.ID, 'carNumber').send_keys(self.car_num_input_box.text())
         driver.find_element(By.XPATH, '/html/body/table[2]/tbody\
                             /tr[5]/td/input').click() # 조회버튼
         driver.implicitly_wait(10)            
@@ -73,9 +72,6 @@ class WindowClass(QMainWindow, UI_class): # 화면 띄우는데 사용되는 cla
 if __name__ == '__main__':
     
     app = QApplication(sys.argv) # QApplication : 프로그램을 실행시켜주는 class
-
-    mywindow = WindowClass() # WindowClass의 인스턴스 생성
-    
-    mywindow.show() # 프로그램 보여주기
-    
+    mywindow = WindowClass() # WindowClass의 인스턴스 생성   
+    mywindow.show() # 프로그램 보여주기   
     app.exec_() # 프로그램을 작동시키는 코드
