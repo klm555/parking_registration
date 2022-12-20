@@ -159,9 +159,9 @@
   <widget class="QLabel" name="reg_status_label">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>100</x>
      <y>160</y>
-     <width>61</width>
+     <width>81</width>
      <height>16</height>
     </rect>
    </property>

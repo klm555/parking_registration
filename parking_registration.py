@@ -100,5 +100,5 @@ if __name__ == '__main__':
     
     app = QApplication(sys.argv) # QApplication : 프로그램을 실행시켜주는 class
     mywindow = WindowClass() # WindowClass의 인스턴스 생성   
-    mywindow.show() # 프로그램 보여주기   
+    mywindow.show() # 프로그램 보여주기
     app.exec_() # 프로그램을 작동시키는 코드

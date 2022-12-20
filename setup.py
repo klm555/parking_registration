@@ -14,9 +14,9 @@ buildOptions = dict(packages = [],
                     include_files = ['parking_registration.ui', './images'],
                     zip_exclude_packages = [])
 
-base = None
+# base = None
 # if sys.platform == "win32":
-#     base = "Win32GUI"
+base = "Win32GUI"
 
 # Assigns default installation path while creating msi file
 if 'bdist_msi' in sys.argv:
